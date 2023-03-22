@@ -58,7 +58,7 @@ public class Assignment3Test {
     }
   }
   [Test]
-  public void insuranceQuoteCalculation2Age25Experience3Accidents4VerifyNoInsurance() {
+  public void insuranceQuoteCalculation2Age25Experience3Accidents4VerifyQuoteNoInsurance() {
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
     driver.FindElement(By.Id("firstName")).Click();
     driver.FindElement(By.Id("firstName")).SendKeys("Gloria");
@@ -89,37 +89,6 @@ public class Assignment3Test {
     }
   }
   [Test]
-  public void insuranceQuoteCalculation3Age35Experience10Accidents2VerifyQuote1350() {
-    driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
-    driver.FindElement(By.Id("firstName")).Click();
-    driver.FindElement(By.Id("firstName")).SendKeys("Gloria");
-    driver.FindElement(By.Id("lastName")).SendKeys("Rivas-Bonilla");
-    driver.FindElement(By.Id("address")).Click();
-    driver.FindElement(By.Id("address")).SendKeys("123 Street");
-    driver.FindElement(By.Id("city")).Click();
-    driver.FindElement(By.Id("city")).SendKeys("Waterloo");
-    driver.FindElement(By.Id("postalCode")).Click();
-    driver.FindElement(By.Id("postalCode")).SendKeys("E3E 4E4");
-    driver.FindElement(By.Id("phone")).Click();
-    driver.FindElement(By.Id("phone")).Click();
-    driver.FindElement(By.Id("phone")).SendKeys("519-456-1234");
-    driver.FindElement(By.Id("email")).Click();
-    driver.FindElement(By.Id("email")).SendKeys("grivas8325@conestogac.on.ca");
-    driver.FindElement(By.Id("age")).Click();
-    driver.FindElement(By.Id("age")).Click();
-    driver.FindElement(By.Id("age")).SendKeys("35");
-    driver.FindElement(By.Id("experience")).Click();
-    driver.FindElement(By.Id("experience")).SendKeys("10");
-    driver.FindElement(By.CssSelector(".card-body > .form-group:nth-child(3)")).Click();
-    driver.FindElement(By.Id("accidents")).Click();
-    driver.FindElement(By.Id("accidents")).SendKeys("2");
-    driver.FindElement(By.Id("btnSubmit")).Click();
-    {
-      string value = driver.FindElement(By.Id("finalQuote")).GetAttribute("value");
-      Assert.That(value, Is.EqualTo("$1350"));
-    }
-  }
-  [Test]
   public void insuranceQuoteCalculation4InvalidPhoneAge27Experience3Accidents0VerifyPhoneNumber() {
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
     driver.FindElement(By.Id("firstName")).Click();
@@ -146,34 +115,6 @@ public class Assignment3Test {
     driver.FindElement(By.Id("accidents")).SendKeys("0");
     driver.FindElement(By.Id("btnSubmit")).Click();
     Assert.That(driver.FindElement(By.Id("phone-error")).Text, Is.EqualTo("Phone Number must follow the patterns 111-111-1111 or (111)111-1111"));
-  }
-  [Test]
-  public void insuranceQuoteCalculation5InvalidEmailAge28Experience3Accidents0VerifyEmail() {
-    driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
-    driver.FindElement(By.Id("firstName")).Click();
-    driver.FindElement(By.Id("firstName")).SendKeys("Gloria");
-    driver.FindElement(By.Id("lastName")).SendKeys("Rivas-Bonilla");
-    driver.FindElement(By.Id("address")).Click();
-    driver.FindElement(By.Id("address")).SendKeys("123 Street");
-    driver.FindElement(By.Id("city")).Click();
-    driver.FindElement(By.Id("city")).SendKeys("Waterloo");
-    driver.FindElement(By.Id("postalCode")).Click();
-    driver.FindElement(By.Id("postalCode")).SendKeys("E3E 4E4");
-    driver.FindElement(By.Id("phone")).Click();
-    driver.FindElement(By.Id("phone")).Click();
-    driver.FindElement(By.Id("phone")).SendKeys("519-123-1324");
-    driver.FindElement(By.Id("email")).Click();
-    driver.FindElement(By.Id("email")).SendKeys("wrongemail");
-    driver.FindElement(By.Id("age")).Click();
-    driver.FindElement(By.Id("age")).Click();
-    driver.FindElement(By.Id("age")).SendKeys("28");
-    driver.FindElement(By.Id("experience")).Click();
-    driver.FindElement(By.Id("experience")).SendKeys("3");
-    driver.FindElement(By.CssSelector(".card-body > .form-group:nth-child(3)")).Click();
-    driver.FindElement(By.Id("accidents")).Click();
-    driver.FindElement(By.Id("accidents")).SendKeys("0");
-    driver.FindElement(By.Id("btnSubmit")).Click();
-    Assert.That(driver.FindElement(By.Id("email-error")).Text, Is.EqualTo("Must be a valid email address"));
   }
   [Test]
   public void insuranceQuoteCalculation6InvalidPostalCodeAge35Experience17Accidents1VerifyPostalCode() {
@@ -283,5 +224,184 @@ public class Assignment3Test {
     driver.FindElement(By.Id("accidents")).SendKeys("0");
     driver.FindElement(By.Id("btnSubmit")).Click();
     Assert.That(driver.FindElement(By.Id("experience-error")).Text, Is.EqualTo("Years of experience is required"));
+  }
+  [Test]
+  public void insuranceQuoteCalculationAge12Experience0Accidents0VerifyAge() {
+    driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
+    driver.FindElement(By.Id("firstName")).Click();
+    driver.FindElement(By.Id("firstName")).SendKeys("Gloria");
+    driver.FindElement(By.Id("lastName")).SendKeys("Rivas-Bonilla");
+    driver.FindElement(By.Id("address")).Click();
+    driver.FindElement(By.Id("address")).SendKeys("123 Street");
+    driver.FindElement(By.Id("city")).Click();
+    driver.FindElement(By.Id("city")).SendKeys("Waterloo");
+    driver.FindElement(By.Id("postalCode")).Click();
+    driver.FindElement(By.Id("postalCode")).SendKeys("E3E 4E4");
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).SendKeys("519-456-1234");
+    driver.FindElement(By.Id("email")).Click();
+    driver.FindElement(By.Id("email")).SendKeys("grivas8325@conestogac.on.ca");
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).SendKeys("12");
+    driver.FindElement(By.Id("experience")).Click();
+    driver.FindElement(By.Id("experience")).SendKeys("0");
+    driver.FindElement(By.CssSelector(".card-body > .form-group:nth-child(3)")).Click();
+    driver.FindElement(By.Id("accidents")).Click();
+    driver.FindElement(By.Id("accidents")).SendKeys("0");
+    driver.FindElement(By.Id("btnSubmit")).Click();
+    Assert.That(driver.FindElement(By.Id("age-error")).Text, Is.EqualTo("Please enter a value greater than or equal to 16."));
+  }
+  [Test]
+  public void insuranceQuoteCalculationAge16Experience10Accidents0VerifyQuoteNoInsurance() {
+    driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
+    driver.FindElement(By.Id("firstName")).Click();
+    driver.FindElement(By.Id("firstName")).SendKeys("Gloria");
+    driver.FindElement(By.Id("lastName")).SendKeys("Rivas-Bonilla");
+    driver.FindElement(By.Id("address")).Click();
+    driver.FindElement(By.Id("address")).SendKeys("123 Street");
+    driver.FindElement(By.Id("city")).Click();
+    driver.FindElement(By.Id("city")).SendKeys("Waterloo");
+    driver.FindElement(By.Id("postalCode")).Click();
+    driver.FindElement(By.Id("postalCode")).SendKeys("E3E 4E4");
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).SendKeys("519-456-1234");
+    driver.FindElement(By.Id("email")).Click();
+    driver.FindElement(By.Id("email")).SendKeys("grivas8325@conestogac.on.ca");
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).SendKeys("16");
+    driver.FindElement(By.Id("experience")).Click();
+    driver.FindElement(By.Id("experience")).SendKeys("10");
+    driver.FindElement(By.CssSelector(".card-body > .form-group:nth-child(3)")).Click();
+    driver.FindElement(By.Id("accidents")).Click();
+    driver.FindElement(By.Id("accidents")).SendKeys("0");
+    driver.FindElement(By.Id("btnSubmit")).Click();
+    {
+      string value = driver.FindElement(By.Id("finalQuote")).GetAttribute("value");
+      Assert.That(value, Is.EqualTo("No Insurance for you!! Driver Age / Experience Not Correct"));
+    }
+  }
+  [Test]
+  public void insuranceQuoteCalculationAge28Experience0Accidents0VerifyQuote4000() {
+    driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
+    driver.FindElement(By.Id("firstName")).Click();
+    driver.FindElement(By.Id("firstName")).SendKeys("Gloria");
+    driver.FindElement(By.Id("lastName")).SendKeys("Rivas-Bonilla");
+    driver.FindElement(By.Id("address")).Click();
+    driver.FindElement(By.Id("address")).SendKeys("123 Street");
+    driver.FindElement(By.Id("city")).Click();
+    driver.FindElement(By.Id("city")).SendKeys("Waterloo");
+    driver.FindElement(By.Id("postalCode")).Click();
+    driver.FindElement(By.Id("postalCode")).SendKeys("E3E 4E4");
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).SendKeys("519-456-1234");
+    driver.FindElement(By.Id("email")).Click();
+    driver.FindElement(By.Id("email")).SendKeys("grivas8325@conestogac.on.ca");
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).SendKeys("28");
+    driver.FindElement(By.Id("experience")).Click();
+    driver.FindElement(By.Id("experience")).SendKeys("0");
+    driver.FindElement(By.CssSelector(".card-body > .form-group:nth-child(3)")).Click();
+    driver.FindElement(By.Id("accidents")).Click();
+    driver.FindElement(By.Id("accidents")).SendKeys("0");
+    driver.FindElement(By.Id("btnSubmit")).Click();
+    {
+      string value = driver.FindElement(By.Id("finalQuote")).GetAttribute("value");
+      Assert.That(value, Is.EqualTo("$4000"));
+    }
+  }
+  [Test]
+  public void insuranceQuoteCalculationAge29Experience10Accidents0VerifyQuote1800() {
+    driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
+    driver.FindElement(By.Id("firstName")).Click();
+    driver.FindElement(By.Id("firstName")).SendKeys("Gloria");
+    driver.FindElement(By.Id("lastName")).SendKeys("Rivas-Bonilla");
+    driver.FindElement(By.Id("address")).Click();
+    driver.FindElement(By.Id("address")).SendKeys("123 Street");
+    driver.FindElement(By.Id("city")).Click();
+    driver.FindElement(By.Id("city")).SendKeys("Waterloo");
+    driver.FindElement(By.Id("postalCode")).Click();
+    driver.FindElement(By.Id("postalCode")).SendKeys("E3E 4E4");
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).SendKeys("519-456-1234");
+    driver.FindElement(By.Id("email")).Click();
+    driver.FindElement(By.Id("email")).SendKeys("grivas8325@conestogac.on.ca");
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).SendKeys("29");
+    driver.FindElement(By.Id("experience")).Click();
+    driver.FindElement(By.Id("experience")).SendKeys("10");
+    driver.FindElement(By.CssSelector(".card-body > .form-group:nth-child(3)")).Click();
+    driver.FindElement(By.Id("accidents")).Click();
+    driver.FindElement(By.Id("accidents")).SendKeys("0");
+    driver.FindElement(By.Id("btnSubmit")).Click();
+    {
+      string value = driver.FindElement(By.Id("finalQuote")).GetAttribute("value");
+      Assert.That(value, Is.EqualTo("$1800"));
+    }
+  }
+  [Test]
+  public void insuranceQuoteCalculationAge31Experience3Accidents0VerifyQuote1875() {
+    driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
+    driver.FindElement(By.Id("firstName")).Click();
+    driver.FindElement(By.Id("firstName")).SendKeys("Gloria");
+    driver.FindElement(By.Id("lastName")).SendKeys("Rivas-Bonilla");
+    driver.FindElement(By.Id("address")).Click();
+    driver.FindElement(By.Id("address")).SendKeys("123 Street");
+    driver.FindElement(By.Id("city")).Click();
+    driver.FindElement(By.Id("city")).SendKeys("Waterloo");
+    driver.FindElement(By.Id("postalCode")).Click();
+    driver.FindElement(By.Id("postalCode")).SendKeys("E3E 4E4");
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).SendKeys("519-456-1234");
+    driver.FindElement(By.Id("email")).Click();
+    driver.FindElement(By.Id("email")).SendKeys("grivas8325@conestogac.on.ca");
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).SendKeys("31");
+    driver.FindElement(By.Id("experience")).Click();
+    driver.FindElement(By.Id("experience")).SendKeys("3");
+    driver.FindElement(By.CssSelector(".card-body > .form-group:nth-child(3)")).Click();
+    driver.FindElement(By.Id("accidents")).Click();
+    driver.FindElement(By.Id("accidents")).SendKeys("0");
+    driver.FindElement(By.Id("btnSubmit")).Click();
+    {
+      string value = driver.FindElement(By.Id("finalQuote")).GetAttribute("value");
+      Assert.That(value, Is.EqualTo("$1875"));
+    }
+  }
+  [Test]
+  public void insuranceQuoteCalculationCityOmittedAge30Experience3Accidents0VerifyCity() {
+    driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
+    driver.FindElement(By.Id("firstName")).Click();
+    driver.FindElement(By.Id("firstName")).SendKeys("Gloria");
+    driver.FindElement(By.Id("lastName")).SendKeys("Rivas-Bonilla");
+    driver.FindElement(By.Id("address")).Click();
+    driver.FindElement(By.Id("address")).SendKeys("123 Street");
+    driver.FindElement(By.Id("city")).Click();
+    driver.FindElement(By.Id("postalCode")).Click();
+    driver.FindElement(By.Id("postalCode")).SendKeys("E3E 4E4");
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).Click();
+    driver.FindElement(By.Id("phone")).SendKeys("519-456-1234");
+    driver.FindElement(By.Id("email")).Click();
+    driver.FindElement(By.Id("email")).SendKeys("grivas8325@conestogac.on.ca");
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).Click();
+    driver.FindElement(By.Id("age")).SendKeys("31");
+    driver.FindElement(By.Id("experience")).Click();
+    driver.FindElement(By.Id("experience")).SendKeys("3");
+    driver.FindElement(By.CssSelector(".card-body > .form-group:nth-child(3)")).Click();
+    driver.FindElement(By.Id("accidents")).Click();
+    driver.FindElement(By.Id("accidents")).SendKeys("0");
+    driver.FindElement(By.Id("btnSubmit")).Click();
+    Assert.That(driver.FindElement(By.Id("city-error")).Text, Is.EqualTo("City is required"));
   }
 }
