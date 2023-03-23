@@ -27,7 +27,7 @@ public class Assignment3Test {
     driver.Quit();
   }
   [Test]
-  public void InsuranceQuoteCalculation1_Age25Experience3Accidents0_VerifyQuote2500() {
+  public void InsuranceQuoteCalculation01_Age25Experience3Accidents0_VerifyQuote2500() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -64,7 +64,7 @@ public class Assignment3Test {
     }
   }
   [Test]
-  public void InsuranceQuoteCalculation2_Age25Experience3Accidents4_VerifyQuoteNoInsurance() {
+  public void InsuranceQuoteCalculation02_Age25Experience3Accidents4_VerifyQuoteNoInsurance() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -101,7 +101,7 @@ public class Assignment3Test {
     }
   }
   [Test]
-  public void InsuranceQuoteCalculation3_Age35Experience10Accidents2_VerifyQuote1350() {
+  public void InsuranceQuoteCalculation03_Age35Experience10Accidents2_VerifyQuote1350() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -138,7 +138,7 @@ public class Assignment3Test {
     }
   }
   [Test]
-  public void InsuranceQuoteCalculation4_InvalidPhoneAge27Experience3Accidents0_VerifyPhoneNumber() {
+  public void InsuranceQuoteCalculation04_InvalidPhoneAge27Experience3Accidents0_VerifyPhoneNumber() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -172,7 +172,7 @@ public class Assignment3Test {
     Assert.That(driver.FindElement(By.Id("phone-error")).Text, Is.EqualTo("Phone Number must follow the patterns 111-111-1111 or (111)111-1111"));
   }
   [Test]
-  public void InsuranceQuoteCalculation5_InvalidEmailAge28Experience3Accidents0_VerifyEmail() {
+  public void InsuranceQuoteCalculation05_InvalidEmailAge28Experience3Accidents0_VerifyEmail() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -206,7 +206,7 @@ public class Assignment3Test {
     Assert.That(driver.FindElement(By.Id("email-error")).Text, Is.EqualTo("Must be a valid email address"));
   }
   [Test]
-  public void InsuranceQuoteCalculation6_InvalidPostalCodeAge35Experience17Accidents1_VerifyPostalCode() {
+  public void InsuranceQuoteCalculation06_InvalidPostalCodeAge35Experience17Accidents1_VerifyPostalCode() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -240,7 +240,7 @@ public class Assignment3Test {
     Assert.That(driver.FindElement(By.Id("postalCode-error")).Text, Is.EqualTo("Postal Code must follow the pattern A1A 1A1"));
   }
   [Test]
-  public void InsuranceQuoteCalculation7_AgeOmittedExperience17Accidents1_VerifyAge() {
+  public void InsuranceQuoteCalculation07_AgeOmittedExperience17Accidents1_VerifyAge() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -273,7 +273,7 @@ public class Assignment3Test {
     Assert.That(driver.FindElement(By.Id("age-error")).Text, Is.EqualTo("Age (>=16) is required"));
   }
   [Test]
-  public void InsuranceQuoteCalculation8_Age37Experience8AccidentsOmitted_VerifyAccidents() {
+  public void InsuranceQuoteCalculation08_Age37Experience8AccidentsOmitted_VerifyAccidents() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -306,7 +306,7 @@ public class Assignment3Test {
     Assert.That(driver.FindElement(By.Id("accidents-error")).Text, Is.EqualTo("Number of accidents is required"));
   }
   [Test]
-  public void InsuranceQuoteCalculation9_Age45ExperienceOmittedAccidents0_VerifyExperience() {
+  public void InsuranceQuoteCalculation09_Age45ExperienceOmittedAccidents0_VerifyExperience() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -339,7 +339,7 @@ public class Assignment3Test {
     Assert.That(driver.FindElement(By.Id("experience-error")).Text, Is.EqualTo("Years of experience is required"));
   }
   [Test]
-  public void InsuranceQuoteCalculation_Age12Experience0Accidents0_VerifyAge() {
+  public void InsuranceQuoteCalculation10_Age12Experience0Accidents0_VerifyAge() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -373,7 +373,7 @@ public class Assignment3Test {
     Assert.That(driver.FindElement(By.Id("age-error")).Text, Is.EqualTo("Please enter a value greater than or equal to 16."));
   }
   [Test]
-  public void InsuranceQuoteCalculation_Age16Experience10Accidents0_VerifyQuoteNoInsurance() {
+  public void InsuranceQuoteCalculation11_Age16Experience10Accidents0_VerifyQuoteNoInsurance() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -410,7 +410,7 @@ public class Assignment3Test {
     }
   }
   [Test]
-  public void InsuranceQuoteCalculation_Age28Experience0Accidents0_VerifyQuote4000() {
+  public void InsuranceQuoteCalculation12_Age28Experience0Accidents0_VerifyQuote4000() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -447,7 +447,7 @@ public class Assignment3Test {
     }
   }
   [Test]
-  public void InsuranceQuoteCalculation_Age29Experience10Accidents0_VerifyQuote1800() {
+  public void InsuranceQuoteCalculation13_Age29Experience10Accidents0_VerifyQuote1800() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -484,7 +484,7 @@ public class Assignment3Test {
     }
   }
   [Test]
-  public void InsuranceQuoteCalculation_Age31Experience3Accidents0_VerifyQuote1875() {
+  public void InsuranceQuoteCalculation14_Age31Experience3Accidents0_VerifyQuote1875() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
@@ -521,7 +521,7 @@ public class Assignment3Test {
     }
   }
   [Test]
-  public void InsuranceQuoteCalculation_CityOmittedAge30Experience3Accidents0_VerifyCity() {
+  public void InsuranceQuoteCalculation15_CityOmittedAge30Experience3Accidents0_VerifyCity() {
 
         //Arrange
     driver.Navigate().GoToUrl("http://localhost/prog2070a03/getQuote.html");
